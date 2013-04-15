@@ -35,4 +35,13 @@ public enum TagType {
 	public String getName() {
 		return name;
 	}
+	
+	public static TagType getTypeFromID(int id) throws TagNotFoundException {
+		for(TagType type : values()){
+	        if(type.id.equals(id)){
+	            return type;
+	        }
+	    }
+		throw new TagNotFoundException("There is no TagType with the ID: " + id + ".");
+	}
 }

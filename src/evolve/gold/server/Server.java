@@ -11,13 +11,13 @@ public class Server {
  
 	private transient ServerBootstrap bootstrap;
  
-    public ServerBootstrap getBootstrap() {
-        return this.bootstrap;
+	public ServerBootstrap getBootstrap() {
+    	return this.bootstrap;
     }
     
     public void start() {
     	this.bootstrap.bind(new InetSocketAddress(ServerProperties.getPort()));
-	}
+    }
 	
 	public void restart() {
 		

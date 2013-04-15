@@ -3,7 +3,7 @@ package evolve.gold.system.props;
 public class ServerProperties {
 	
 	String mainPropertiesFile = "server.properties";
-	String mainPropertiesTitle = "~~~uCraft Server Properties File~~~";
+	String mainPropertiesTitle = "~~~Gold Server Properties File~~~";
 	GoldProperties mainProperties = new GoldProperties(mainPropertiesFile, mainPropertiesTitle);
 	
 	static int port;
