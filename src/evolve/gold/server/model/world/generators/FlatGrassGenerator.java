@@ -1,12 +1,16 @@
 package evolve.gold.server.model.world.generators;
 
+import evolve.gold.server.model.world.Chunk;
 import evolve.gold.server.model.world.World;
-import evolve.gold.server.model.world.generators.WorldGenerator;
 
 public class FlatGrassGenerator extends WorldGenerator {
 
+	public FlatGrassGenerator(World world, long seed) {
+		super(world, seed);
+	}
+
 	@Override
-	public void generate(World world) {
+	public void generate(Chunk chunk) {
 		// TODO Auto-generated method stub
 	}
 

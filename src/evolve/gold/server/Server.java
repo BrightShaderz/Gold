@@ -1,22 +1,37 @@
 package evolve.gold.server;
 
-import java.net.InetSocketAddress;
+import java.net.ServerSocket;
+import java.net.Socket;
 
-import org.jboss.netty.bootstrap.ServerBootstrap;
-
+import evolve.gold.system.logger.LogType;
+import evolve.gold.system.logger.Logger;
 import evolve.gold.system.props.ServerProperties;
 
 
+
 public class Server {
- 
-	private transient ServerBootstrap bootstrap;
- 
-	public ServerBootstrap getBootstrap() {
-    	return this.bootstrap;
-    }
+	
+	private static ServerSocket connection;
+	private static Logger logger;
+	private final int minecraftVersion = 60;
+	private static Boolean alive = false;
     
     public void start() {
-    	this.bootstrap.bind(new InetSocketAddress(ServerProperties.getPort()));
+    	this.alive = true;
+    	
+    	while(alive) {
+    		try{
+    			connection = new ServerSocket(ServerProperties.getPort());
+    			new Thread(){
+					public void run()
+					{
+						Connect();
+					}
+				}.start();
+    		} catch(Exception e) {
+    			logger.Log(e.toString(), LogType.ERROR);
+    		}
+    	}
     }
 	
 	public void restart() {
@@ -25,5 +40,18 @@ public class Server {
 	
 	public void stop() {
 		
+	}
+	
+	public static void Connect()
+	{
+		while (true)
+		{
+			try{
+				Socket client = connection.accept();
+				//TODO add new player & send packets.
+			} catch (Exception e){
+				logger.Log(e.toString(), LogType.ERROR);
+			}
+		}
 	}
 }
