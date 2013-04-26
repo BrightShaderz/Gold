@@ -3,7 +3,6 @@ package evolve.gold.server.model.block;
 public enum BlockID {
 	
 	Air(0),
-	Nothing(0),
 	Stone(1),
 	Grass(2),
 	Dirt(3),

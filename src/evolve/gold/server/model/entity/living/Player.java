@@ -12,7 +12,7 @@ public class Player extends LivingEntity {
 	private Logger logger;
 	private String loginName;
 	private String displayName;
-	private boolean isConnected = false;
+	private boolean disconnected = false;
 	
 	public Player(Socket socket) {
 		try {

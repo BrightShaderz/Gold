@@ -25,17 +25,15 @@ public class Server {
 
     	this.alive = true;
 
-    	while(alive) {
-    		try {
-    			connection = new ServerSocket(this.port);
-    			new Thread() {
-					public void run() {
-						connect();
-					}
-				}.start();
-    		} catch(Exception e) {
-    			logger.Log(e.toString(), LogType.ERROR);
-    		}
+    	try {
+    		connection = new ServerSocket(this.port);
+    		new Thread() {
+				public void run() {
+					connect();
+				}
+			}.start();
+    	} catch(Exception e) {
+    		logger.Log(e.toString(), LogType.ERROR);
     	}
     }
 	
@@ -48,7 +46,7 @@ public class Server {
 	}
 	
 	public static void connect() {
-		while (true) {
+		while (alive) {
 			try {
 				Socket client = connection.accept();
 				Player p = new Player(client);
