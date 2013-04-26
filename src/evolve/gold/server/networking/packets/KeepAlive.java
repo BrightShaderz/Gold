@@ -29,5 +29,4 @@ public class KeepAlive extends Packet {
 	public void read(DataInputStream dis) throws IOException {
 		this.id = dis.readInt();
 	}
-
 }

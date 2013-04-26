@@ -21,5 +21,4 @@ public class Player extends LivingEntity {
 			logger.Log(e.toString(), LogType.ERROR);
 		}
 	}
-
 }
