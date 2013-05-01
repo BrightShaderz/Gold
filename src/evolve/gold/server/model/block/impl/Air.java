@@ -25,4 +25,9 @@ public class Air extends Block {
 		return 0;
 	}
 
+	@Override
+	public Boolean solid() {
+		return false;
+	}
+
 }

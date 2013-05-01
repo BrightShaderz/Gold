@@ -5,4 +5,8 @@ public abstract class LiquidBlock extends Block {
 	public Boolean liquid() {
 		return true;
 	}
+	@Override
+	public Boolean solid() {
+		return false;
+	}
 }

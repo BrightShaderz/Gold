@@ -2,7 +2,6 @@ package evolve.gold.server.model.entity.living;
 
 import java.net.Socket;
 
-import evolve.gold.server.model.entity.LivingEntity;
 import evolve.gold.system.logger.LogType;
 import evolve.gold.system.logger.Logger;
 
